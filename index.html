@@ -159,6 +159,7 @@
                             let values = extension.field.getValue();
                             swap(values, preElement, id);
                             change = false;
+                            preElement = -1;
                             extension.field.setValue(values);
                             renderImages(values);
                         }
@@ -172,7 +173,6 @@
                 }));
                 function renderImages(products) {
                     let innerHtml = '';
-                    console.log('products', products);
                     $.each(products, function (i, item) {
                         if(!item) {
                             return;
